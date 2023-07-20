@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "printers",
+  "info": {
+    "singularName": "printer",
+    "pluralName": "printers",
+    "displayName": "printer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "brand": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::brand.brand"
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "discount": {
+      "type": "integer"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "summary": {
+      "type": "text",
+      "required": true
+    },
+    "video": {
+      "type": "string",
+      "required": true
+    },
+    "cover": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "wallpaper": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "screenshots": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    },
+    "releaseDate": {
+      "type": "date",
+      "required": true
+    }
+  }
+}
